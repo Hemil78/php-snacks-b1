@@ -28,8 +28,8 @@
             $verificaMail = true;
         }
     };
-    if(is_nan($age)) {
-        echo '<h1>Attenzione! Inserisci l eta corretta!</h1>';
+    if(!is_numeric($_GET['age'])) {
+        echo '<h1>Attenzione! Inserisci l eta corretta</h1>';
     } else{
         $verificaAge = true;
     }
