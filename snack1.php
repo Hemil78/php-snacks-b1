@@ -36,10 +36,6 @@
             'puntiOspite' => '70'
         ]
     ];
-
-    for ($i = 0; $i < count($partite); $i++) {
-        echo $partite[$i]['squadraCasa'] . ' - ' .  $partite[$i]['squadraOspite'] . ' | ' . $partite[$i]['puntiCasa'] . ' - ' . $partite[$i]['puntiOspite'] . '<br>';
-    }
 ?>
 
 <!DOCTYPE html>
@@ -48,9 +44,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>PHP Snack blocco 1</title>
+        <title>Snack 1</title>
     </head>
     <body>
-        
+        <?php 
+             for ($i = 0; $i < count($partite); $i++) {
+                  echo $partite[$i]['squadraCasa'] . ' - ' .  $partite[$i]['squadraOspite'] . ' | ' . $partite[$i]['puntiCasa'] . ' - ' . $partite[$i]['puntiOspite'] . '<br>';
+             } 
+        ?>
     </body>
 </html>
