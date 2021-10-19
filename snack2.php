@@ -9,28 +9,27 @@
 
     $verifica = false;
 
-    if($name >= 3) {
-        $verifica = true;
-    }
-    if(!empty($_GET['mail'])) {
-        $mail = $_GET['mail'];
-        if(strpos($mail, '@') && strpos($mail, '.')) {
+    if(!empty($_GET['name'])) {
+        $name = $_GET['name'];
+        if(!$name >= 3) {
+            echo '<h1>Attanzione! Scrivi il nome completo</h1>';
+        } else{
             $verifica = true;
         }
-    }
+        
+    }; 
+    if(!empty($_GET['mail'])) {
+        $mail = $_GET['mail'];
+        if(!strpos($mail, '@') && strpos($mail, '.')) {
+            echo '<h1>Attenzione! Inserisci la mail completa</h1>';
+        } else{
+            $verifica = true;
+        }
+    };
+    if($verifica == true) {
+        echo '<h1>Accesso Consentito!</h1>';
+    };
+
+    
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Snack 2</title>
-    </head>
-    <body>
-        <?php if($verifica == true): ?>
-        <h1>Name, Mail e Age verificati. Accesso riuscito!</h1>
-        <?php endif; ?>
-    </body>
-</html>
