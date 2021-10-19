@@ -7,26 +7,34 @@
     $mail = $_GET['mail'];
     $age = $_GET['age'];
 
-    $verifica = false;
+    $verificaName = false;
+    $verificaMail = false;
+    $verificaAge = false;
 
     if(!empty($_GET['name'])) {
         $name = $_GET['name'];
-        if(!$name >= 3) {
-            echo '<h1>Attanzione! Scrivi il nome completo</h1>';
+        if(strlen($name) < 3) {
+            echo '<h1>Attenzione! Scrivi il nome completo</h1>';
         } else{
-            $verifica = true;
+            $verificaName = true;
         }
         
     }; 
     if(!empty($_GET['mail'])) {
         $mail = $_GET['mail'];
-        if(!strpos($mail, '@') && strpos($mail, '.')) {
+        if(!strpos($mail, '@') || !strpos($mail, '.')) {
             echo '<h1>Attenzione! Inserisci la mail completa</h1>';
         } else{
-            $verifica = true;
+            $verificaMail = true;
         }
     };
-    if($verifica == true) {
+    if(is_nan($age)) {
+        echo '<h1>Attenzione! Inserisci l eta corretta!</h1>';
+    } else{
+        $verificaAge = true;
+    }
+
+    if($verificaName == true && $verificaMail == true && $verificaAge == true) {
         echo '<h1>Accesso Consentito!</h1>';
     };
 
