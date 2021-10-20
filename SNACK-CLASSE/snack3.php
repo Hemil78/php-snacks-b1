@@ -62,7 +62,7 @@
                         <li>
                             
                             <h3><?php echo $element['title']; ?></h3>
-                            <h5><em><?php echo $element['author']; ?></em></h5>
+                            <h5>Scritto da: <em><?php echo $element['author']; ?></em></h5>
                             <p><?php echo $element['text']; ?></p>
                             
                         </li>
